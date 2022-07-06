@@ -19,6 +19,30 @@ function getArray() {
 function functionWithThrow() {
   throw new Error('User error');
 }
+
+class Test {
+  constructor(name) {
+    this.name = name || 'test';
+  }
+}
+
+function functionCallback(string, callback) {
+  callback(string.toUpperCase());
+}
+
+function functionPromise(string) {
+  return new Promise((resolve, reject) => {
+    if (!string) reject('Error');
+    resolve(string.toLowerCase());
+  });
+}
+
+function functionWithoutTest1() {}
+function functionWithoutTest2() {}
+function functionWithoutTest3() {}
+function functionWithoutTest4() {}
+function functionWithoutTest5() {}
+
 export {
   nullVariable,
   emptyString,
@@ -29,4 +53,7 @@ export {
   getObject,
   getArray,
   functionWithThrow,
+  Test,
+  functionCallback,
+  functionPromise,
 };
